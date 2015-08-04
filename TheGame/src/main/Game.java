@@ -10,6 +10,7 @@ public class Game implements Runnable,KeyListener {
 	Game(MainClass parent) {
 		graphic = parent;
 		graphic.canvas.addKeyListener(this);
+		graphic.canvas.requestFocus();
 	}
 
 	@Override
