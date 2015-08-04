@@ -12,6 +12,8 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.util.ListIterator;
+import java.util.Vector;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +29,8 @@ public class MainClass implements Runnable {
 	Graphics graphics;
 	Graphics2D g2d;
 	BufferedImage bi;
+
+	Vector<Sprite> painter;
 
 	int fps, frames;
 
@@ -61,9 +65,7 @@ public class MainClass implements Runnable {
 		gd.setFullScreenWindow(frame);
 
 		if (gd.isDisplayChangeSupported()) {
-			gd.setDisplayMode(
-			new DisplayMode(1280,720, 32, DisplayMode.REFRESH_RATE_UNKNOWN)
-			);
+			gd.setDisplayMode(new DisplayMode(1280, 720, 32, DisplayMode.REFRESH_RATE_UNKNOWN));
 		}
 
 		bi = gc.createCompatibleImage(1280, 720);
@@ -71,6 +73,8 @@ public class MainClass implements Runnable {
 		g2d = null;
 
 		game = new Game(this);
+
+		painter = new Vector<Sprite>();
 
 		curTime = System.currentTimeMillis();
 		lastTime = curTime;
@@ -92,12 +96,14 @@ public class MainClass implements Runnable {
 			try {
 				computeDelta();
 
-				checkKeys();
-				doLogic();
-				moveObjects();
-				
 				g2d = bi.createGraphics();
 
+				if (painter != null) {
+					for (ListIterator<Sprite> it = painter.listIterator(); it.hasNext();) {
+						Sprite r = it.next();
+						r.drawObjects(g2d);
+					}
+				}
 				g2d.fillRect(0, 0, 800, 600);
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));
@@ -126,21 +132,6 @@ public class MainClass implements Runnable {
 			}
 		}
 
-	}
-
-	private void doLogic() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void moveObjects() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void checkKeys() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private void computeDelta() {

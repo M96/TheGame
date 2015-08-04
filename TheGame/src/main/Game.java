@@ -2,24 +2,59 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ListIterator;
+import java.util.Vector;
 
 public class Game implements Runnable,KeyListener {
 
 	MainClass graphic;
+	BiLoader imgLoader;
 	
+	Vector<Sprite> actors;
+
 	Game(MainClass parent) {
 		graphic = parent;
 		graphic.canvas.addKeyListener(this);
 		graphic.canvas.requestFocus();
+		
+		imgLoader = new BiLoader();
+		
+		actors = new Vector<Sprite>();
 	}
 
 	@Override
 	public void run() {
+		
+		doLogic();
+		
+		moveObjects();
+		cloneVectors();
+		
 		try {
-			Thread.sleep(10);
+			Thread.sleep(6,250000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+
+	private void cloneVectors() {
+		graphic.painter = (Vector<Sprite>) actors.clone();
+	}
+
+	private void moveObjects() {
+		for(ListIterator<Sprite> it = actors.listIterator();it.hasNext();)
+		{
+			Sprite r = it.next();
+			r.move();
+		}
+	}
+	
+	private void doLogic() {
+		for(ListIterator<Sprite> it = actors.listIterator();it.hasNext();)
+		{
+			Sprite r = it.next();
+			r.doLogic();
 		}
 	}
 

@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
@@ -22,40 +23,26 @@ public class Sprite extends Rectangle2D.Double{
 		this.height = pics[0].getHeight();
 	}
 	
-	void drawObjects(Graphics g)
+	void drawObjects(Graphics2D g2d)
 	{
-		g.drawImage(pics[currentpic],(int) x, (int) y, null);
+		g2d.drawImage(pics[currentpic],(int) x, (int) y, null);
 	}
 	
-	void move(long delta)
+	void move()
 	{
 		if(dx!=0)
 		{
-			x += dx *(delta/1e9);
+			x += dx;
 		}
 		
 		if(dx!=0)
 		{
-			y += dy *(delta/1e9);
+			y += dy;
 		}
 	}
 	
-	void animate(long delta)
+	void doLogic()
 	{
-		animation += (delta/1000000);
-		if(animation > delay)
-		{
-			animation = 0;
-			computeAnimation();
-		}
-	}
-
-	private void computeAnimation() {
-		currentpic++;
 		
-		if(currentpic >= pics.length)
-		{
-			currentpic = 0;
-		}
 	}
 }
