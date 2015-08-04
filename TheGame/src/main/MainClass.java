@@ -6,6 +6,7 @@ public class MainClass {
 		// TODOAuto-generated constructor stub
 		System.out.println("Hallo Atti"+"Was geht???");
 		System.out.println("Hallo Markus"+"Was geht???");
+		//Schwul
 	}
 
 	public static void main(String[] args) {
