@@ -19,7 +19,9 @@ public class Game implements Runnable,KeyListener {
 		
 		imgLoader = new BiLoader();
 		actors = new Vector<Sprite>();
+
 		actors.add(new CivilBuilding(imgLoader.loadPics("Lighthouse.jpg", 1), 50, 50, 1));
+
 	}
 
 	@Override
