@@ -92,6 +92,10 @@ public class MainClass implements Runnable {
 			try {
 				computeDelta();
 
+				checkKeys();
+				doLogic();
+				moveObjects();
+				
 				g2d = bi.createGraphics();
 
 				g2d.fillRect(0, 0, 800, 600);
@@ -122,6 +126,21 @@ public class MainClass implements Runnable {
 			}
 		}
 
+	}
+
+	private void doLogic() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void moveObjects() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void checkKeys() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void computeDelta() {
