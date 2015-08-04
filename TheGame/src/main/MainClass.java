@@ -36,7 +36,7 @@ public class MainClass implements Runnable {
 		// Canvas initialisieren
 		canvas = new Canvas();
 		canvas.setIgnoreRepaint(true);
-		canvas.setSize(800, 600);
+		canvas.setSize(1280,720);
 
 		// Jframe initialisieren
 		frame = new JFrame("Test");
@@ -56,7 +56,7 @@ public class MainClass implements Runnable {
 		GraphicsDevice gd = ge.getDefaultScreenDevice();
 		GraphicsConfiguration gc = gd.getDefaultConfiguration();
 
-		bi = gc.createCompatibleImage(800, 600);
+		bi = gc.createCompatibleImage(1280,720);
 		graphics = null;
 		g2d = null;
 
