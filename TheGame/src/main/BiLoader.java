@@ -18,10 +18,10 @@ public class BiLoader {
 		BufferedImage[] temp = new BufferedImage[pics];
 		BufferedImage source = null;
 		
-		URL picURL = getClass().getClassLoader().getResource(path);
+		URL pic_url = getClass().getClassLoader().getResource(path);
 		
 		try {
-			source = ImageIO.read(picURL);
+			source = ImageIO.read(pic_url);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
