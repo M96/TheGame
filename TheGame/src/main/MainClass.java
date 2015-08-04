@@ -7,7 +7,6 @@ public class MainClass {
 		System.out.println("Hallo Atti"+"Was geht???");
 		System.out.println("Hallo Markus"+"Was geht???");
 		//Schwul
-		//Bist du
 	}
 
 	public static void main(String[] args) {
