@@ -3,6 +3,7 @@ package main;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.DisplayMode;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -36,12 +37,13 @@ public class MainClass implements Runnable {
 		// Canvas initialisieren
 		canvas = new Canvas();
 		canvas.setIgnoreRepaint(true);
-		canvas.setSize(1280,720);
+		canvas.setSize(1280, 720);
 
 		// Jframe initialisieren
 		frame = new JFrame("Test");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setIgnoreRepaint(true);
+		frame.setUndecorated(true);
 
 		frame.add(canvas);
 		frame.pack();
@@ -56,7 +58,15 @@ public class MainClass implements Runnable {
 		GraphicsDevice gd = ge.getDefaultScreenDevice();
 		GraphicsConfiguration gc = gd.getDefaultConfiguration();
 
-		bi = gc.createCompatibleImage(1280,720);
+		gd.setFullScreenWindow(frame);
+
+		if (gd.isDisplayChangeSupported()) {
+			gd.setDisplayMode(
+			new DisplayMode(1280,720, 32, DisplayMode.REFRESH_RATE_UNKNOWN)
+			);
+		}
+
+		bi = gc.createCompatibleImage(1280, 720);
 		graphics = null;
 		g2d = null;
 
@@ -84,7 +94,7 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
-				g2d.fillRect(0, 0, 800,600);
+				g2d.fillRect(0, 0, 800, 600);
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));
 
