@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class MainClass extends JPanel{
+public class MainClass extends JPanel implements Runnable{
 
 	JFrame frame;
 	
@@ -17,10 +17,19 @@ public class MainClass extends JPanel{
 		frame.add(this);
 		frame.pack();
 		frame.setVisible(true);
+		
+		Thread thread = new Thread(this);
+		thread.start();
 	}
 
 	public static void main(String[] args) {
 		new MainClass();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
