@@ -104,8 +104,6 @@ public class MainClass implements Runnable {
 						r.drawObjects(g2d);
 					}
 				}
-				
-				g2d.fillRect(0, 0, 800, 600);
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));
 
