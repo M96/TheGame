@@ -20,6 +20,7 @@ public class Game implements Runnable,KeyListener {
 		imgLoader = new BiLoader();
 		
 		actors = new Vector<Sprite>();
+		
 	}
 
 	@Override
