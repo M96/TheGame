@@ -1,18 +1,25 @@
 package main;
 
-public class MainClass {
+import java.awt.Dimension;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MainClass extends JPanel{
+
+	JFrame frame;
+	
 	public MainClass() {
-		// TODOAuto-generated constructor stub
-		System.out.println("Hallo Atti"+"Was geht???");
-		System.out.println("Hallo Markus"+"Was geht???");
-		//Schwul
-
+		this.setPreferredSize(new Dimension(800,600));
+		
+		frame = new JFrame("Test");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(this);
+		frame.pack();
+		frame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Huhu!
 		new MainClass();
 	}
 
