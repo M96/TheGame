@@ -7,7 +7,7 @@ public class MainClass {
 		System.out.println("Hallo Atti"+"Was geht???");
 		System.out.println("Hallo Markus"+"Was geht???");
 		//Schwul
-		//okaydokay
+		//okaydokayy
 	}
 
 	public static void main(String[] args) {
