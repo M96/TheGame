@@ -11,7 +11,7 @@ public class MainClass extends JPanel implements Runnable{
 	
 	public MainClass() {
 		this.setPreferredSize(new Dimension(800,600));
-		
+
 		frame = new JFrame("Test");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
