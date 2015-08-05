@@ -1,12 +1,14 @@
 package main;
 
-public abstract class MilitaryForce {
+import java.awt.image.BufferedImage;
+
+public abstract class MilitaryForce extends GameObject implements Military {
 
 	private int maxHealth,currentHealth,attValue,defValue;
 	
-	public MilitaryForce(int maxHealth, int attValue, int defValue) {
-		this.maxHealth = maxHealth;
-		this.currentHealth = maxHealth;
+	public MilitaryForce(BufferedImage[] i, int posX, int posY, int attValue, int defValue, int maxHealth, int currentHealth) {
+		super(i, posX, posY, defValue, maxHealth, true, attValue, defValue, maxHealth, currentHealth);
+		
 		this.attValue = attValue;
 		this.defValue = defValue;
 	}

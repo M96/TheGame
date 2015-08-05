@@ -10,8 +10,8 @@ abstract public class Building extends GameObject {
 	
 	private int constructionTime;
 	
-	public Building(BufferedImage[] i,double posX, double posY, long delay, boolean attackable) {
-		super(i,posX,posY, delay, 0,attackable);
+	public Building(BufferedImage[] i,double posX, double posY, long delay, boolean attackable, int attValue, int defValue, int maxHealth, int currentHealth) {
+		super(i,posX,posY, delay, 0,attackable,attValue,defValue,maxHealth,currentHealth);
 		this.manned=false;
 	}
 

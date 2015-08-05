@@ -2,10 +2,10 @@ package main;
 
 import java.awt.image.BufferedImage;
 
-public class MilitaryBuilding extends Building{
+public class MilitaryBuilding extends Building implements Military {
 
-	public MilitaryBuilding(BufferedImage[] i,double posX, double posY, long delay) {
-		super(i,posX,posY,delay,true); 
+	public MilitaryBuilding(BufferedImage[] i,double posX, double posY, long delay, int attValue, int defValue, int maxHealth, int currentHealth) {
+		super(i,posX,posY,delay,true,attValue,defValue,maxHealth,currentHealth); 
 	}
 
 	@Override
@@ -18,6 +18,12 @@ public class MilitaryBuilding extends Building{
 	}
 	
 	void underAttack(GameObject attacker) {
+		
+	}
+
+	@Override
+	public void attack() {
+		// TODO Auto-generated method stub
 		
 	}
 

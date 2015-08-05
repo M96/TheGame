@@ -17,11 +17,11 @@ public class Game implements Runnable,KeyListener {
 		graphic.canvas.addKeyListener(this);
 		graphic.canvas.requestFocus();
 		
-		ui = new Ui();
+		ui = new Ui(graphic.frame);
 		
 		actors = new Vector<Sprite>();
 
-		actors.add(new CivilBuilding(BiLoader.loadPics("grass.jpg", 1), 50, 50, 1));
+		actors.add(new CivilBuilding(BiLoader.loadPics("Lighthouse.jpg", 1), 50, 50, 1));
 
 	}
 
