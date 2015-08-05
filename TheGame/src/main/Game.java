@@ -8,7 +8,6 @@ import java.util.Vector;
 public class Game implements Runnable,KeyListener {
 
 	MainClass graphic;
-
 	
 	Vector<Sprite> actors;
 

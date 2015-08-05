@@ -1,6 +1,6 @@
 package main;
 
-public  abstract class MilitaryForce {
+public abstract class MilitaryForce {
 
 	private int maxHealth,currentHealth,attValue,defValue;
 	
@@ -13,7 +13,7 @@ public  abstract class MilitaryForce {
 	
 	abstract void attack(Building victimMilitaryBuilding);
 	abstract void attack(MilitaryForce victimMilitaryForce);
-	abstract void underAttack(Object attacker);
+	abstract void underAttack(GameObject attacker);
 	abstract void walk(int velocity, int direction);
 	
 

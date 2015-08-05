@@ -13,11 +13,11 @@ public class MilitaryBuilding extends Building{
 		
 	}
 	
-	void attack(Object victim) {
+	void attack(GameObject victim) {
 		
 	}
 	
-	void underAttack(Object attacker) {
+	void underAttack(GameObject attacker) {
 		
 	}
 
