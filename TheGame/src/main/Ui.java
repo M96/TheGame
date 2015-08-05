@@ -2,7 +2,7 @@ package main;
 
 import java.awt.image.BufferedImage;
 
-public class Ui {
+public class Ui{
 	
 	BufferedImage image;
 	
