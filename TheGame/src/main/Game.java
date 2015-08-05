@@ -17,7 +17,7 @@ public class Game implements Runnable,KeyListener {
 		graphic.canvas.addKeyListener(this);
 		graphic.canvas.requestFocus();
 		
-		ui = new Ui(graphic.frame);
+		ui = new Ui();
 		
 		actors = new Vector<Sprite>();
 
