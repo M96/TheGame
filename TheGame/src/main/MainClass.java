@@ -49,7 +49,7 @@ public class MainClass implements Runnable {
 		// Canvas initialisieren
 		canvas = new Canvas();
 		canvas.setIgnoreRepaint(true);
-		canvas.setSize(width, height);
+		canvas.setSize(1920, 1080);
 
 		// Jframe initialisieren
 		frame = new JFrame("Test");
@@ -76,7 +76,7 @@ public class MainClass implements Runnable {
 			gd.setDisplayMode(new DisplayMode(width, height, 32, DisplayMode.REFRESH_RATE_UNKNOWN));
 		}
 
-		bi = gc.createCompatibleImage((int) dim.getWidth(),(int) dim.getHeight());
+		bi = gc.createCompatibleImage(width, height);
 		graphics = null;
 		g2d = null;
 
@@ -106,7 +106,7 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
-				g2d.scale((width/1920),(height/1080));
+				g2d.scale(((float)width/1920f),((float)height/1080f));
 				
 				if (painter != null) {
 					for (ListIterator<Sprite> it = painter.listIterator(); it.hasNext();) {
