@@ -8,6 +8,7 @@ import java.util.Vector;
 public class Game implements Runnable,KeyListener {
 
 	MainClass graphic;
+	Ui ui;
 	
 	Vector<Sprite> actors;
 
@@ -16,9 +17,11 @@ public class Game implements Runnable,KeyListener {
 		graphic.canvas.addKeyListener(this);
 		graphic.canvas.requestFocus();
 		
+		ui = new Ui();
+		
 		actors = new Vector<Sprite>();
 
-		actors.add(new CivilBuilding(BiLoader.loadPics("Lighthouse.jpg", 1), 50, 50, 1));
+		actors.add(new CivilBuilding(BiLoader.loadPics("grass.jpg", 1), 50, 50, 1));
 
 	}
 

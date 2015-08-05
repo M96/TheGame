@@ -10,6 +10,7 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ListIterator;
@@ -22,6 +23,8 @@ public class MainClass implements Runnable {
 
 	Game game;
 
+	static int width, height;
+	
 	JFrame frame;
 	Canvas canvas;
 
@@ -38,10 +41,15 @@ public class MainClass implements Runnable {
 
 	public MainClass() {
 
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		
+		width = (int) dim.getWidth();
+		height = (int) dim.getHeight();
+		
 		// Canvas initialisieren
 		canvas = new Canvas();
 		canvas.setIgnoreRepaint(true);
-		canvas.setSize(1280, 720);
+		canvas.setSize(width, height);
 
 		// Jframe initialisieren
 		frame = new JFrame("Test");
@@ -63,12 +71,12 @@ public class MainClass implements Runnable {
 		GraphicsConfiguration gc = gd.getDefaultConfiguration();
 
 		gd.setFullScreenWindow(frame);
-
+		
 		if (gd.isDisplayChangeSupported()) {
-			gd.setDisplayMode(new DisplayMode(1280, 720, 32, DisplayMode.REFRESH_RATE_UNKNOWN));
+			gd.setDisplayMode(new DisplayMode(width, height, 32, DisplayMode.REFRESH_RATE_UNKNOWN));
 		}
 
-		bi = gc.createCompatibleImage(1280, 720);
+		bi = gc.createCompatibleImage((int) dim.getWidth(),(int) dim.getHeight());
 		graphics = null;
 		g2d = null;
 
@@ -98,6 +106,8 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
+				g2d.scale((width/1920),(height/1080));
+				
 				if (painter != null) {
 					for (ListIterator<Sprite> it = painter.listIterator(); it.hasNext();) {
 						Sprite r = it.next();
@@ -107,10 +117,12 @@ public class MainClass implements Runnable {
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));
 
+				g2d.drawImage(game.ui.image, 0,0,null);
+				
 				g2d.setColor(Color.GREEN);
 
 				g2d.drawString(String.format("FPS: %s", fps), 20, 20);
-
+				
 				// Mehr graphic zeugs
 				graphics = buffer.getDrawGraphics();
 				graphics.drawImage(bi, 0, 0, null);
