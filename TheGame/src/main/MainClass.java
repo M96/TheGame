@@ -49,7 +49,7 @@ public class MainClass implements Runnable {
 		// Canvas initialisieren
 		canvas = new Canvas();
 		canvas.setIgnoreRepaint(true);
-		canvas.setSize(1920, 1080);
+		canvas.setSize(width, height);
 
 		// Jframe initialisieren
 		frame = new JFrame("Test");
