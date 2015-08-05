@@ -13,12 +13,12 @@ public class BiLoader {
 		
 	}
 	
-	BufferedImage[] loadPics(String path, int pics)
+	static BufferedImage[] loadPics(String path, int pics)
 	{
 		BufferedImage[] temp = new BufferedImage[pics];
 		BufferedImage source = null;
 		
-		URL pic_url = getClass().getClassLoader().getResource(path);
+		URL pic_url = BiLoader.class.getClassLoader().getResource(path);
 		
 		try {
 			source = ImageIO.read(pic_url);
