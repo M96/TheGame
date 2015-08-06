@@ -2,29 +2,24 @@ package main;
 
 import java.awt.image.BufferedImage;
 
-public class MilitaryBuilding extends Building implements Military {
+public abstract class MilitaryBuilding extends Building implements Military {
 
 	public MilitaryBuilding(BufferedImage[] i,double posX, double posY, long delay, int attValue, int defValue, int maxHealth, int currentHealth, int buildingID) {
 		super(i,posX,posY,delay,true,attValue,defValue,maxHealth,currentHealth,buildingID); 
 	}
 
 	@Override
-	void destroy() {
+	public void attack(GameObject victim) {
+		if (victim.isAttackable()) {
+			int att = getAttValue();
+			int def = victim.getDefValue();
 		
-	}
-	
-	void attack(GameObject victim) {
+			int remainingAtt = def-att;
 		
-	}
-	
-	void underAttack(GameObject attacker) {
-		
-	}
-
-	@Override
-	public void attack() {
-		// TODO Auto-generated method stub
-		
+			victim.underAttack(remainingAtt);
+		} else {
+			System.out.println("Victim is not attackable!");
+		}
 	}
 
 }

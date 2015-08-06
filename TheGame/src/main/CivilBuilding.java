@@ -13,4 +13,6 @@ public abstract class CivilBuilding extends Building {
 		
 	}
 
+
+
 }

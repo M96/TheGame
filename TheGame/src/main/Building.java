@@ -35,10 +35,6 @@ abstract public class Building extends GameObject {
 		return manned;
 	}
 	
-	boolean isAttackable() {
-		return attackable;
-	}
-	
 	boolean isDestroyed() {
 		return destroyed;
 	}
