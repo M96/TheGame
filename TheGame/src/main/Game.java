@@ -27,7 +27,6 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 		ui = new Ui(this);
 		
 		actors = new Vector<Sprite>();
-
 	}
 
 	@Override
@@ -61,6 +60,7 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 	private void doLogic() {
 		for(ListIterator<Sprite> it = actors.listIterator();it.hasNext();)
 		{
+			System.out.println("aaaaaa");
 			Sprite r = it.next();
 			r.doLogic();
 		}
