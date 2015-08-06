@@ -15,7 +15,7 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 	
 	int mouseX, mouseY;
 	
-	static Vector<Sprite> actors;
+	Vector<Sprite> actors;
 
 	Game(MainClass parent) {
 		graphic = parent;
