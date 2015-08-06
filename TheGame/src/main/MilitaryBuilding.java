@@ -4,8 +4,8 @@ import java.awt.image.BufferedImage;
 
 public class MilitaryBuilding extends Building implements Military {
 
-	public MilitaryBuilding(BufferedImage[] i,double posX, double posY, long delay, int attValue, int defValue, int maxHealth, int currentHealth) {
-		super(i,posX,posY,delay,true,attValue,defValue,maxHealth,currentHealth); 
+	public MilitaryBuilding(BufferedImage[] i,double posX, double posY, long delay, int attValue, int defValue, int maxHealth, int currentHealth, int buildingID) {
+		super(i,posX,posY,delay,true,attValue,defValue,maxHealth,currentHealth,buildingID); 
 	}
 
 	@Override
