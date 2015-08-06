@@ -21,9 +21,10 @@ import javax.swing.JPanel;
 
 public class MainClass implements Runnable {
 
-	Game game;
-
 	static int width, height;
+	static double scaleFactor;
+	
+	Game game;
 	
 	JFrame frame;
 	Canvas canvas;
@@ -45,6 +46,8 @@ public class MainClass implements Runnable {
 		
 		width = (int) dim.getWidth();
 		height = (int) dim.getHeight();
+		
+		scaleFactor = (float)width/1920f;
 		
 		// Canvas initialisieren
 		canvas = new Canvas();
@@ -70,23 +73,28 @@ public class MainClass implements Runnable {
 		GraphicsDevice gd = ge.getDefaultScreenDevice();
 		GraphicsConfiguration gc = gd.getDefaultConfiguration();
 
+		//Fullscreen
 		gd.setFullScreenWindow(frame);
 		
 		if (gd.isDisplayChangeSupported()) {
 			gd.setDisplayMode(new DisplayMode(width, height, 32, DisplayMode.REFRESH_RATE_UNKNOWN));
 		}
 
+		//Mehr Graphicsachen
 		bi = gc.createCompatibleImage(width, height);
 		graphics = null;
 		g2d = null;
 
+		//Spiel initialisieren
 		game = new Game(this);
 
 		painter = new Vector<Sprite>();
 
+		//Für den Timer
 		curTime = System.currentTimeMillis();
 		lastTime = curTime;
 
+		//Grahic und GameThread starten
 		Thread tgraphic = new Thread(this);
 		tgraphic.start();
 
@@ -106,8 +114,10 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
-				g2d.scale(((float)width/1920f),((float)height/1080f));
+				//Skalierung auf Bildschirmgröße
+				g2d.scale(scaleFactor, scaleFactor);
 				
+				//Alle Sprites malen
 				if (painter != null) {
 					for (ListIterator<Sprite> it = painter.listIterator(); it.hasNext();) {
 						Sprite r = it.next();

@@ -2,26 +2,31 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ListIterator;
 import java.util.Vector;
 
-public class Game implements Runnable,KeyListener {
+public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListener {
 
 	MainClass graphic;
 	Ui ui;
+	
+	int mouseX, mouseY;
 	
 	Vector<Sprite> actors;
 
 	Game(MainClass parent) {
 		graphic = parent;
 		graphic.canvas.addKeyListener(this);
+		graphic.canvas.addMouseListener(this);
+		graphic.canvas.addMouseMotionListener(this);
 		graphic.canvas.requestFocus();
 		
-		ui = new Ui();
+		ui = new Ui(this);
 		
 		actors = new Vector<Sprite>();
-
-		actors.add(new CivilBuilding(BiLoader.loadPics("Lighthouse.jpg", 1), 50, 50, 1));
 
 	}
 
@@ -77,6 +82,48 @@ public class Game implements Runnable,KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		ui.elementClicked(mouseX,mouseY);
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		mouseX = e.getX();
+		mouseY = e.getY();
 		
 	}
 }
