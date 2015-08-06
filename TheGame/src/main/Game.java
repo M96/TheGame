@@ -25,7 +25,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		graphic.canvas.requestFocus();
 
 		ui = new Ui(this);
-
+		
 		actors = new Vector<Sprite>();
 	}
 
@@ -59,6 +59,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	}
 
 	private void doLogic() {
+
 		for (ListIterator<Sprite> it = actors.listIterator(); it.hasNext();) {
 			Sprite r = it.next();
 			r.doLogic();
