@@ -114,7 +114,9 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
-				g2d.drawRect(0, 0, width, height);
+				g2d.setColor(Color.BLACK);
+				
+				g2d.fillRect(0, 0, width, height);
 				
 				//Skalierung auf Bildschirmgröße
 				//g2d.scale(scaleFactor, scaleFactor);
