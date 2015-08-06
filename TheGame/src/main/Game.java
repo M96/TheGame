@@ -25,7 +25,6 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		graphic.canvas.requestFocus();
 
 		ui = new Ui(this);
-
 		
 		actors = new Vector<Sprite>();
 	}
