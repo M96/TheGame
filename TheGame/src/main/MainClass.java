@@ -123,6 +123,10 @@ public class MainClass implements Runnable {
 						Sprite r = it.next();
 						r.drawObjects(g2d);
 					}
+					for(int i = 0; i< painter.size(); i++)
+					{
+						painter.elementAt(i).drawObjects(g2d);
+					}
 				}
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));

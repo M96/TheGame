@@ -25,7 +25,6 @@ public class Ui{
 	{
 		if(buildingID == Building.MANSION)
 		{
-			System.out.println("yo");
 			new Mansion(200,200);
 		}
 	}
