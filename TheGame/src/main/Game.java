@@ -10,12 +10,12 @@ import java.util.Vector;
 
 public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListener {
 
-	MainClass graphic;
+	private MainClass graphic;
 	Ui ui;
 	
 	int mouseX, mouseY;
 	
-	Vector<Sprite> actors;
+	static Vector<Sprite> actors;
 
 	Game(MainClass parent) {
 		graphic = parent;
@@ -64,6 +64,11 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 			Sprite r = it.next();
 			r.doLogic();
 		}
+	}
+	
+	void addGameObject(GameObject go)
+	{
+		actors.addElement(go);
 	}
 
 	@Override
