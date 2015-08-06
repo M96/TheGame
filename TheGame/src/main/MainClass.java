@@ -24,21 +24,21 @@ public class MainClass implements Runnable {
 	static int width, height;
 	static double scaleFactor;
 	
-	Game game;
+	private Game game;
 	
 	JFrame frame;
 	Canvas canvas;
 
-	BufferStrategy buffer;
-	Graphics graphics;
-	Graphics2D g2d;
-	BufferedImage bi;
+	private BufferStrategy buffer;
+	private Graphics graphics;
+	private Graphics2D g2d;
+	private BufferedImage bi;
 
 	Vector<Sprite> painter;
 
-	int fps, frames;
+	private int fps, frames;
 
-	long totalTime, curTime, lastTime;
+	private long totalTime, curTime, lastTime;
 
 	public MainClass() {
 

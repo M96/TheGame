@@ -17,7 +17,16 @@ public class Ui{
 	{
 		if(x < 100f * MainClass.scaleFactor && y < 100f * MainClass.scaleFactor)
 		{
-			System.out.println("Yay");
+			buildingSelected(9000);
+		}
+	}
+	
+	void buildingSelected(int buildingID)
+	{
+		if(buildingID == Building.MANSION)
+		{
+			System.out.println("yo");
+			theGame.addGameObject(new Mansion(200,200));
 		}
 	}
 }
