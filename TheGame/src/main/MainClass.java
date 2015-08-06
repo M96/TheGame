@@ -115,7 +115,7 @@ public class MainClass implements Runnable {
 				g2d = bi.createGraphics();
 
 				//Skalierung auf Bildschirmgröße
-				g2d.scale(scaleFactor, scaleFactor);
+				//g2d.scale(scaleFactor, scaleFactor);
 				
 				//Alle Sprites malen
 				if (painter != null) {

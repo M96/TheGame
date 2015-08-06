@@ -16,20 +16,18 @@ public class Ui {
 		buildingSelected = false;
 	}
 
-	void elementClicked(int tempx, int tempy) {
-		int x = (int) (tempx * MainClass.scaleFactor);
-		int y = (int) (tempy * MainClass.scaleFactor);
+	void elementClicked(int x, int y) {
 		
 		if (buildingSelected) {
 			switch (selectedBuildingID) {
 			case (Building.MANSION): {
-				new Mansion(tempx, tempy);
+				new Mansion(x, y);
 				break;
 			}
 			}
 			buildingSelected = false;
 		} else {
-			if (x < 100 && y < 100) {
+			if (x < 100f && y < 100f) {
 				selectedBuildingID = Building.MANSION;
 				buildingSelected = true;
 			}

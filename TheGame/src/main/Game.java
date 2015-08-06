@@ -12,6 +12,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 
 	private MainClass graphic;
 	Ui ui;
+	Map map;
 
 	int mouseX, mouseY;
 
@@ -26,6 +27,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 
 		ui = new Ui(this);
 		
+		map = new Map();
 		actors = new Vector<Sprite>();
 	}
 
