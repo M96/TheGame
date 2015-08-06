@@ -27,6 +27,10 @@ abstract public class Building extends GameObject {
 		manned=true;
 	};
 	
+	int getBuildingID() {
+		return buildingID;
+	}
+	
 	boolean isManned() {
 		return manned;
 	}
