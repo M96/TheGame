@@ -15,7 +15,7 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 	
 	int mouseX, mouseY;
 	
-	Vector<Sprite> actors;
+	private static Vector<Sprite> actors;
 
 	Game(MainClass parent) {
 		graphic = parent;
@@ -66,7 +66,7 @@ public class Game implements Runnable,KeyListener,MouseListener,MouseMotionListe
 		}
 	}
 	
-	void addGameObject(GameObject go)
+	static void addGameObject(GameObject go)
 	{
 		actors.addElement(go);
 	}

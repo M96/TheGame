@@ -26,7 +26,7 @@ public class Ui{
 		if(buildingID == Building.MANSION)
 		{
 			System.out.println("yo");
-			theGame.addGameObject(new Mansion(200,200));
+			new Mansion(200,200);
 		}
 	}
 }

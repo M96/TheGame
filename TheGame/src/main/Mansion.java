@@ -6,7 +6,7 @@ public class Mansion extends CivilBuilding {
 
 	public Mansion(int posX, int posY) {
 		super(BiLoader.loadPics(texturePath, 1), posX, posY, 0, Building.MANSION);
-		Game.actors.add(this);
+		Game.addGameObject(this);
 	}
 
 }
