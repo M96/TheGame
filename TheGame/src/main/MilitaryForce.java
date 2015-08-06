@@ -8,7 +8,7 @@ public abstract class MilitaryForce extends GameObject implements Military {
 		super(i, posX, posY, defValue, maxHealth, true, attValue, defValue, maxHealth, currentHealth);
 	}
 	
-	abstract void walk(int velocity, int direction);
+	abstract void walk(int velocity, int targetX, int targetY);
 	
 	@Override
 	public void attack(GameObject victim) {
