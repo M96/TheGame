@@ -114,6 +114,8 @@ public class MainClass implements Runnable {
 
 				g2d = bi.createGraphics();
 
+				g2d.drawRect(0, 0, width, height);
+				
 				//Skalierung auf Bildschirmgröße
 				//g2d.scale(scaleFactor, scaleFactor);
 				
@@ -122,10 +124,6 @@ public class MainClass implements Runnable {
 					for (ListIterator<Sprite> it = painter.listIterator(); it.hasNext();) {
 						Sprite r = it.next();
 						r.drawObjects(g2d);
-					}
-					for(int i = 0; i< painter.size(); i++)
-					{
-						painter.elementAt(i).drawObjects(g2d);
 					}
 				}
 

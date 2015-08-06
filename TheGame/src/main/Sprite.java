@@ -25,7 +25,7 @@ public class Sprite extends Rectangle2D.Double{
 	
 	void drawObjects(Graphics2D g2d)
 	{
-		g2d.drawImage(pics[currentpic],(int) x, (int) y, null);
+		g2d.drawImage(pics[currentpic],(int) x - Game.posXonMap, (int) y - Game.posYonMap, null);
 	}
 	
 	void move()
