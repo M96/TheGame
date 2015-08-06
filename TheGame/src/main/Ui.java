@@ -21,7 +21,7 @@ public class Ui {
 		if (buildingSelected) {
 			switch (selectedBuildingID) {
 			case (Building.MANSION): {
-				new Mansion(x, y);
+				new Mansion(x+theGame.posXonMap, y+theGame.posYonMap);
 				break;
 			}
 			}

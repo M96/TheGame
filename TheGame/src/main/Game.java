@@ -15,6 +15,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	Map map;
 
 	int mouseX, mouseY;
+	static int posXonMap, posYonMap;
 
 	private static Vector<Sprite> actors;
 
@@ -29,6 +30,9 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		
 		map = new Map();
 		actors = new Vector<Sprite>();
+		
+		posXonMap = 0;
+		posYonMap = 0;
 	}
 
 	@Override
@@ -76,6 +80,22 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == e.VK_ESCAPE) {
 			System.exit(0);
+		}
+		if (e.getKeyCode() == e.VK_RIGHT)
+		{
+			if(posXonMap < 5000 - MainClass.width)posXonMap++;
+		}
+		if (e.getKeyCode() == e.VK_LEFT)
+		{
+			if(posXonMap > 0) posXonMap--;
+		}
+		if (e.getKeyCode() == e.VK_UP)
+		{
+			if(posYonMap > 0) posYonMap--;
+		}
+		if (e.getKeyCode() == e.VK_DOWN)
+		{
+			if(posYonMap < 5000 - MainClass.height)posYonMap++;
 		}
 	}
 
