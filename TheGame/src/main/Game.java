@@ -27,7 +27,6 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		ui = new Ui(this);
 
 		actors = new Vector<Sprite>();
-
 	}
 
 	@Override
