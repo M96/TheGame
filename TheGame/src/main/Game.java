@@ -83,19 +83,19 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		}
 		if (e.getKeyCode() == e.VK_RIGHT)
 		{
-			if(posXonMap < 5000 - MainClass.width)posXonMap++;
+			if(posXonMap < 5000 - MainClass.width) posXonMap += 10;
 		}
 		if (e.getKeyCode() == e.VK_LEFT)
 		{
-			if(posXonMap > 0) posXonMap--;
+			if(posXonMap > 0) posXonMap -= 10;
 		}
 		if (e.getKeyCode() == e.VK_UP)
 		{
-			if(posYonMap > 0) posYonMap--;
+			if(posYonMap > 0) posYonMap -= 10;
 		}
 		if (e.getKeyCode() == e.VK_DOWN)
 		{
-			if(posYonMap < 5000 - MainClass.height)posYonMap++;
+			if(posYonMap < 5000 - MainClass.height)posYonMap += 10;
 		}
 	}
 
