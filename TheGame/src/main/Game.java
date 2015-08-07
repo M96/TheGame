@@ -17,7 +17,9 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	int mouseX, mouseY;
 	static int posXonMap, posYonMap;
 
-	private static Vector<Sprite> actors;
+	private Vector<Sprite> actors;
+	
+	private static Vector<Sprite> actorsToAdd;
 
 	Game(MainClass parent) {
 		graphic = parent;
@@ -30,6 +32,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 		
 		map = new Map();
 		actors = new Vector<Sprite>();
+		actorsToAdd = new Vector<Sprite>();
 		
 		posXonMap = 0;
 		posYonMap = 0;
@@ -49,7 +52,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		} 
 	}
 
 	@SuppressWarnings("unchecked")
@@ -65,7 +68,9 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	}
 
 	private void doLogic() {
-
+		actors.addAll(actorsToAdd);
+		actorsToAdd.clear();
+		
 		for (ListIterator<Sprite> it = actors.listIterator(); it.hasNext();) {
 			Sprite r = it.next();
 			r.doLogic();
@@ -73,7 +78,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	}
 
 	static void addGameObject(GameObject go) {
-		actors.addElement(go);
+		actorsToAdd.addElement(go);
 	}
 
 	@Override
@@ -113,7 +118,6 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		ui.elementClicked(mouseX, mouseY);
 	}
 
 	@Override
@@ -131,7 +135,7 @@ public class Game implements Runnable, KeyListener, MouseListener, MouseMotionLi
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+		ui.elementClicked(mouseX, mouseY);
 	}
 
 	@Override

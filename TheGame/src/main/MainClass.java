@@ -130,7 +130,7 @@ public class MainClass implements Runnable {
 				}
 
 				g2d.setFont(new Font("Courier New", Font.PLAIN, 12));
-
+				
 				g2d.drawImage(game.ui.image, 0,0,null);
 				
 				g2d.setColor(Color.GREEN);
