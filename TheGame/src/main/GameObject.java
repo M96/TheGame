@@ -44,6 +44,7 @@ public abstract class GameObject extends Sprite {
 			int health = getCurrentHealth() - remainingAtt;
 			if(health<=0) {
 				setCurrentHealth(0);
+				this.destroy();
 			} else {
 				setCurrentHealth(health);
 			}
