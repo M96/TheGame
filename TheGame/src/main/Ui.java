@@ -11,7 +11,7 @@ public class Ui {
 	private int selectedBuildingID;
 
 	Ui(Game parent) {
-		image = BiLoader.loadPics("test.png", 1)[0];
+		image = BiLoader.loadPics("C:\\Users\\Attila\\Pictures\\test.png", 1)[0];
 		theGame = parent;
 		buildingSelected = false;
 	}

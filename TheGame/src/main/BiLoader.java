@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -18,10 +19,10 @@ public class BiLoader {
 		BufferedImage[] temp = new BufferedImage[pics];
 		BufferedImage source = null;
 		
-		URL pic_url = BiLoader.class.getClassLoader().getResource(path);
+		File sourceimage = new File(path);
 		
 		try {
-			source = ImageIO.read(pic_url);
+			source = ImageIO.read(sourceimage);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
